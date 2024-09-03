@@ -22,6 +22,20 @@
       "when": 1725292296130,
       "tag": "0002_violet_cyclops",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1725356397429,
+      "tag": "0003_luxuriant_captain_universe",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1725358091515,
+      "tag": "0004_perpetual_lizard",
+      "breakpoints": true
     }
   ]
 }
