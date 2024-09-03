@@ -36,6 +36,20 @@
       "when": 1725358091515,
       "tag": "0004_perpetual_lizard",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1725359454111,
+      "tag": "0005_messy_iron_fist",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1725359667777,
+      "tag": "0006_lush_violations",
+      "breakpoints": true
     }
   ]
 }
