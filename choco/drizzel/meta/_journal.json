@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1725272046847,
+      "tag": "0000_married_brood",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1725277373261,
+      "tag": "0001_giant_cammi",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1725292296130,
+      "tag": "0002_violet_cyclops",
+      "breakpoints": true
+    }
+  ]
+}
