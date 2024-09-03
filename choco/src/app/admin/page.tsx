@@ -1,10 +1,9 @@
+import { Button } from '@/components/ui/button'
 import React from 'react'
 
 function Admin() {
   return (
-    <div>
-      Admin
-    </div>
+   <Button>Click Me</Button>
   )
 }
 
