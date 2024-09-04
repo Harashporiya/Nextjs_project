@@ -1,14 +1,8 @@
 import Link from "next/link"
 import {
   CircleUser,
-  HomeIcon,
-  LayersIcon,
-  WarehouseIcon,
-  BlocksIcon,
   Menu,
   Package2,
-  ShoppingCart,
-  Users,
 } from "lucide-react"
 
 
@@ -22,21 +16,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-
+import { navItem } from "./_components/navItem"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import Sidebar from "./_components/sidebar"
 export const description =
   "A products dashboard with a sidebar navigation and a main content area. The dashboard has a header with a search input and a user menu. The sidebar has a logo, navigation links, and a card with a call to action. The main content area shows an empty state with a call to action."
 
 const DashboardLayout=()=> {
-  const navItem=[
-    {label:"Deshboard",href:"/admin",Icon:HomeIcon},
-    {label:"Products",href:"/admin/products",Icon:LayersIcon},
-    {label:"Warehouses",href:"/admin/warehouses",Icon:WarehouseIcon},
-    {label:"Delivery Persons",href:"/admin/delivery-persons",Icon:Users},
-    {label:"Orders",href:"/admin/orders",Icon:ShoppingCart},
-    {label:"Inventories",href:"/admin/inventories",Icon:BlocksIcon}
-]
+  
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
      <Sidebar/>

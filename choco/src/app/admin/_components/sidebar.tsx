@@ -2,26 +2,12 @@ import React from 'react'
 import Link from "next/link"
 import {
   Bell,
-  BlocksIcon,
-  HomeIcon,
-  LayersIcon,
   Package2,
-  ShoppingCart,
-  Users,
-  WarehouseIcon,
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-
+import { navItem } from './navItem'
 const  Sidebar=()=> {
-    const navItem=[
-        {label:"Deshboard",href:"/admin",Icon:HomeIcon},
-        {label:"Products",href:"/admin/products",Icon:LayersIcon},
-        {label:"Warehouses",href:"/admin/warehouses",Icon:WarehouseIcon},
-        {label:"Delivery Persons",href:"/admin/delivery-persons",Icon:Users},
-        {label:"Orders",href:"/admin/orders",Icon:ShoppingCart},
-        {label:"Inventories",href:"/admin/inventories",Icon:BlocksIcon}
-    ]
   return (
     <div>
        <div className="hidden border-r bg-muted/40 md:block">
