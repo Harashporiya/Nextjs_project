@@ -11,7 +11,7 @@ import { Loader2 } from 'lucide-react'
 import DeliverySheet from './_components/delivery-sheet'
 
 
-const WarehousesPage = () => {
+const DeliveryPerosnPage = () => {
     const {onOpen} = useNewDeliveryPerson()
     const {data:deliveryPerson,isLoading,isError} = useQuery<deliveryperson[]>({
         queryKey:['deliveryPerson'],
@@ -44,4 +44,4 @@ const WarehousesPage = () => {
   )
 }
 
-export default WarehousesPage
+export default DeliveryPerosnPage
