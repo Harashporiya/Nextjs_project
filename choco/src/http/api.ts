@@ -15,3 +15,18 @@ export const createProduct = async(data:FormData)=>{
 
       return response.data
 }
+
+export const getAllWarehouses = async()=>{
+   const response = await api.get("/warehouses");
+   return response.data
+}
+
+export const createWarehouses = async (data:FormData)=>{
+    const response = await api.post("/warehouses",data,{
+        headers:{
+            'Content-Type':"application/json"
+        }
+    })
+
+    return response.data
+}

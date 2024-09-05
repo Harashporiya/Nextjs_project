@@ -1,6 +1,7 @@
 import {create} from "zustand"
 
-type NewProductState={
+
+type NewWarehousesState={
     isOpen:boolean;
     onOpen:()=>void;
     onClose:()=>void;
@@ -8,11 +9,11 @@ type NewProductState={
 
 
 
-export const useNewProduct = create<NewProductState>((set)=>{
+
+export const useNewWarehouses = create<NewWarehousesState>((set)=>{
     return {
          isOpen:false,
          onOpen:()=>set({isOpen:true}),
          onClose:()=>set({isOpen:false})
     }
 })
-
