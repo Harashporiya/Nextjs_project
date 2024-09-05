@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 
 import { QueryProvider } from "@/providers/query-provider";
+import { Toaster } from "@/components/ui/toaster";
 
 const fontSans=FontSans({
    subsets:["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
         <QueryProvider>{children}</QueryProvider>
+        <Toaster/>
       </body>
     </html>
   );
