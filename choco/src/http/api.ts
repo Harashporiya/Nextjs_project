@@ -1,3 +1,4 @@
+import { deliveryperson } from "@/types";
 import { api } from "./client"
 
 export const getAllProducts = async()=>{
@@ -27,6 +28,18 @@ export const createWarehouses = async (data:FormData)=>{
             'Content-Type':"application/json"
         }
     })
+
+    return response.data
+}
+
+export const getAllDeliveryPerson = async()=>{
+    const response = await api.get("/delivery-person")
+
+    return response.data
+}
+
+export const createDeliveryPerson = async (data:deliveryperson)=>{
+    const response = await api.post("/delivery-person",data)
 
     return response.data
 }
