@@ -19,9 +19,10 @@ const ProductsPage = () => {
   return (<>
     <div className='flex items-center justify-between'>
      <h3 className='text-2xl font-bold tracking-tight'>Products</h3>
-     <Button size={'sm'} onClick={onOpen}>Add Product</Button>
-     <ProductSheet/>
+     <Button size={'sm'}  onClick={onOpen}>Add Product</Button>
+    
     </div>
+    <ProductSheet/>
     <DataTable columns={columns}  data={products || []}/>
     </>
   )
