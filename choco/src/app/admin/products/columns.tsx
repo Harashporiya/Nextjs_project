@@ -12,7 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-export const column:ColumnDef<Product>[]=[
+export const columns:ColumnDef<Product>[]=[
     {
         accessorKey:"name",
         header:"Name"
