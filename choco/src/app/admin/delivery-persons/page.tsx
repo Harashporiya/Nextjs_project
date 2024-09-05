@@ -21,8 +21,8 @@ const WarehousesPage = () => {
   return (<>
   <div>
     <div className='flex items-center justify-between'>
-     <h3 className='text-2xl font-bold tracking-tight'>Delivery-persons</h3>
-     <Button size={'sm'}  onClick={onOpen}>Add delivery-person</Button>
+     <h3 className='text-2xl font-bold tracking-tight'>Delivery Persons</h3>
+     <Button size={'sm'}  onClick={onOpen}>Add Delivery Person</Button>
     
     </div>
        <DeliverySheet/>
