@@ -16,6 +16,9 @@ export async function POST(request:Request) {
         return Response.json({message:error},{status:400})
     }
 
+    //todo : check database status code , and if it is duplicate value code then send the message
+    // to the client.
+
     try {
         await db.insert(inventories).values(validedData)
         return Response.json({message:"OK"},{status:201})
