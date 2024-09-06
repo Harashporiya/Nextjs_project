@@ -1,9 +1,15 @@
-
 export interface Product{
     id:number;
     name:string;
     image:string;
     price:number;
+}
+export interface SingleProduct{
+    id:number;
+    name:string;
+    image:string;
+    price:number;
+    description:string
 }
 export interface Warehouse{
     id:number;

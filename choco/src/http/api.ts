@@ -56,3 +56,10 @@ export const createInventory = async (data:InventoryData)=>{
 
     return response.data
 }
+
+export const getSingleProduct = async(id:string)=>{
+    const response = await api.get(`/products/${id}`)
+
+    return response.data
+}
+
