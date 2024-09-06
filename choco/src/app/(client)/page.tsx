@@ -7,6 +7,8 @@ import About from './_components/about'
 import NewLetter from './_components/newletter'
 import Footer from './_components/footer'
 
+import ProductList from './_components/product'
+
 
 const HomePage = () => {
   return (
@@ -15,7 +17,7 @@ const HomePage = () => {
       <ImageHome/>
       <SpecialProduct/>
       <About/>
-     
+     <ProductList/>
       <NewLetter/>
       <Footer/>
     </div>
