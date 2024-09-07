@@ -1,7 +1,7 @@
 "use client"
 import { getSingleProduct } from '@/http/api'
 import { useQuery } from '@tanstack/react-query'
-import { useParams } from 'next/navigation'
+import { useParams, usePathname } from 'next/navigation'
 import React from 'react'
 import Header from '../../_components/header'
 import Image from 'next/image'
@@ -15,11 +15,17 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
+import { useSession } from 'next-auth/react'
+import Link from 'next/link'
 
 
 const SingleProduct = () => {
   const params = useParams()
+  const pathName = usePathname()
   const id = params.id
+
+  const {data:session} = useSession()
+ 
 
   const form = useForm<z.infer<typeof orderSchema>>({
     resolver: zodResolver(orderSchema),
@@ -41,11 +47,19 @@ const SingleProduct = () => {
     console.log({values})
   }
 
+  const qty = form.watch("qty")
+  const price = React.useMemo(()=>{
+    if(product?.price){
+      return product.price * qty;
+    }
+    return 0;
+  },[qty,product])
+
   return (
     <div>
       <Header />
       <section className='min-h-screen relative bg-[#f5f5f5]'>
-        <div className='z-50 mx-auto flex h-full max-w-6xl gap-x-10 px-5 py-14 md:py-20'>
+        <div className='z-50 mx-auto flex  items-center flex-col  md:flex-row  h-full max-w-6xl gap-x-10 px-5 py-14 md:py-20'>
           <div>
             {isLoading ? (
               <Skeleton className='aspect-square w-[28rem] bg-[#854c2b9f]' />
@@ -57,7 +71,7 @@ const SingleProduct = () => {
                   width={0}
                   height={0}
                   sizes="100vw"
-                  className="aspect-square w-[28rem] rounded-md object-cover shadow-2xl"
+                  className="aspect-square lg:w-[28rem] md:w-[20rem] sm:w-[14rem] rounded-md object-cover shadow-2xl"
                 />
               )
             )}
@@ -103,7 +117,7 @@ const SingleProduct = () => {
 
                 <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)}>
-                    <div className='flex space-x-2 mt-2'>
+                    <div className='flex sm:flex-col md:flex-col lg:flex-row space-x-2 mt-2'>
                       <FormField
                         control={form.control}
                         name='address'
@@ -152,8 +166,11 @@ const SingleProduct = () => {
                     </div>
                     <hr className="md:w-full w-24 h-[2px] my-4 bg-black rounded" />
                     <div className='flex items-center justify-between'>
-                      <span className='text-3xl font-semibold'>$50</span>
-                      <Button type='submit'>Buy Now</Button>
+                      <span className='text-3xl font-semibold'>${price}</span>
+                      {
+                        session?<Button type='submit'>Buy Now</Button>:
+                        <Link href={`/api/auth/signin?callbackUrl=${pathName}`}><Button>Buy Now</Button></Link>
+                      }
 
                     </div>
                   </form>

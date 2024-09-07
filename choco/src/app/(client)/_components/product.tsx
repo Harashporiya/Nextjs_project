@@ -11,12 +11,16 @@ import { Skeleton } from "@/components/ui/skeleton"
 
 
 const Products = () => {
-  const skeletons = Array.from({length:4})
+
   const { data: products,isLoading } = useQuery({
     queryKey: ['products'],
     queryFn: getAllProducts,
     staleTime: 10 * 1000,
+    
   });
+ 
+  const skeletons =  Array.from({ length: products?.length || 6 });
+
 
   return (
     <section className="bg-[#f5f5f5] px-5 py-14 md:py-20">
