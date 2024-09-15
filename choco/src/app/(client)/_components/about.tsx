@@ -6,7 +6,7 @@ const About = () => {
     <div className='bg-[#ffbb7343] p-10 mt-2'>
      <div className='flex md:flex-row flex-col  items-center md:items-center justify-center space-x-10'>
         <div>
-            <Image src='chocolate.jpg' alt='' className='h-48 w-96 rounded-sm'/>
+            <Image src='/chocolate.jpg' width={0} height={0} alt='' className='h-48 w-96 rounded-sm'/>
         </div>
      <div className='m-2 max-w-[500px]'>
         <p className='text-xl md:text-2xl font-bold text-red-950'>Forget love, I&quotd Rather Fall In Chocolate</p>

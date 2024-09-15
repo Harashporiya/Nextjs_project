@@ -25,6 +25,7 @@ export default function ImageHome() {
                 src="/chocolate.jpg"
                 alt=""
                 fill
+               
                 className="object-cover  object-center"
                 priority
                 

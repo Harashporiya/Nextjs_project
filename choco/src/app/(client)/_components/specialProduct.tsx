@@ -25,6 +25,8 @@ const SpecialProduct = () => {
                         <Image
                             src={item.src}
                             alt={item.alt} 
+                            width={0}
+                            height={0}
                             className="md:border-8 border-4 w-60 h-48  md:h-40 md:w-40 md:space-x-8 border-red-900 rounded-lg md:rounded-full"
                         />
                         <span className='text-lg text-center text-red-900 font-sans'>{item.name}</span>
