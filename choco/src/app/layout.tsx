@@ -31,7 +31,9 @@ export default async function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
         <QueryProvider>
-          <AuthProvider session={session}>{children}</AuthProvider>
+         <AuthProvider session={session}>
+          {children}
+          </AuthProvider>
           </QueryProvider>
         <Toaster/>
       </body>

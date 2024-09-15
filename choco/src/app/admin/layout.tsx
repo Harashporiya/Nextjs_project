@@ -52,9 +52,9 @@ const DashboardLayout=({children}:{children:React.ReactNode})=> {
                   <span className="sr-only">Acme Inc</span>
                 </Link> 
                 {
-                navItem.map((item)=>{
+                navItem.map((item,index)=>{
                     return(
-                        <Link
+                        <Link key={index}
                         href={item.href}
                         className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                       >

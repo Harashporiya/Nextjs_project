@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react'
 
 const SpecialProduct = () => {
@@ -21,7 +22,7 @@ const SpecialProduct = () => {
             <div className='flex md:flex-row text-center md:text-center flex-col items-center  md:justify-center md:space-x-10'>
                 {product.map((item, index) => (
                     <div key={index} className='items-center space-x-8  md:mt-10 '>
-                        <img
+                        <Image
                             src={item.src}
                             alt={item.alt} 
                             className="md:border-8 border-4 w-60 h-48  md:h-40 md:w-40 md:space-x-8 border-red-900 rounded-lg md:rounded-full"

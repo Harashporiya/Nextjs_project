@@ -21,17 +21,20 @@ export async function POST(request:Request){
     } catch (error) {
         return Response.json({message:error},{status:400})
     }
+    const imageFile = validatedData.image instanceof FileList ? validatedData.image[0] : validatedData.image;
 
 
-    const fileName = `${Date.now()}.${validatedData.image.name.split(".").slice(-1)}`    // choco.png  234123444.png
+
+    const fileName = `${Date.now()}.${imageFile.name.split(".").slice(-1)}`    // choco.png  234123444.png
      
     try {
-        const buffer  = Buffer.from(await validatedData.image.arrayBuffer());
+        // const buffer  = Buffer.from(await validatedData.image.arrayBuffer());
+        const buffer = Buffer.from(await imageFile.arrayBuffer());
         await writeFile(path.join(process.cwd(),"public/assets",fileName),buffer)
     } catch (error) {
         return Response.json({message:"Falied to save the file to fs"},{status:500});
     }
-
+ 
     try {
         await db.insert(products).values({...validatedData,image:fileName})
         // todo: remove stored image from fs
