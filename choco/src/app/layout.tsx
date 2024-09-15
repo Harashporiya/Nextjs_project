@@ -29,6 +29,7 @@ export default async function RootLayout({
   const session = await getServerSession(authOptions)
   return (
     <html lang="en" suppressHydrationWarning>
+      <meta name="cryptomus" content="edc0b03e" />
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
         <QueryProvider>
          <AuthProvider session={session}>
